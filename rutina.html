@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Mood - Rutină și Organizare</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Descoperă obiceiuri simple de organizare pentru studenți. Învață cum să îți gestionezi timpul eficient între cursuri, examene și relaxare." />
+    <meta name="keywords"
+        content="rutina studenti, organizare timp, productivitate facultate, tehnica pomodoro, sfaturi gestionare timp" />
+    <meta name="author" content="Mișcu Andreea" />
+
+    <!-- FontAwesome pentru Iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f1ec;
+            color: #222;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+                url(https://images.unsplash.com/photo-1689655451590-be38de8003e2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 95px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 20px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e0b084;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-article {
+            background-color: #fff;
+            padding: 38px;
+            border-left: 7px solid #b36b3c;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        .blog-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 20px 0;
+        }
+
+        .blog-article h2 {
+            color: #3a2c25;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .blog-article .meta {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .blog-article .meta i {
+            margin-right: 5px;
+            color: #b36b3c;
+        }
+
+        .author {
+            color: #3a2c25;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .blog-article p {
+            margin-bottom: 17px;
+            font-size: 17px;
+        }
+
+        .blog-article h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #3a2c25;
+        }
+
+        .category {
+            color: #b36b3c;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        /* Sectiune Comentarii */
+        .comments-section {
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        .comments-section h3 {
+            margin-bottom: 20px;
+            color: #3a2c25;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            border-color: #b36b3c;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            background-color: #3a2c25;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #b36b3c;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3a2c25;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #b36b3c;
+            transform: translateX(-5px);
+        }
+
+        /* Buton Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #b36b3c;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background-color: #3a2c25;
+            transform: translateY(-5px);
+        }
+
+        /* Footer & Newsletter */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .newsletter {
+            max-width: 450px;
+            margin: 0 auto 25px auto;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #444;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .newsletter-form button {
+            background-color: #b36b3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e0b084;
+            color: #222;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 22px;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #e0b084;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            .blog-article img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header {
+                padding: 65px 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .blog-article {
+                padding: 25px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Buton Sus -->
+    <a href="#acasa" class="back-to-top" title="Înapoi sus">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <header id="acasa">
+        <h1>Urban Mood</h1>
+        <p>Blog de lifestyle urban despre timp liber, locuri din București, organizare, stil și viața de zi cu zi a
+            studenților.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Acasă</a>
+        <a href="index.html#articole">Articole</a>
+        <a href="weekend.html">Weekend</a>
+        <a href="bucuresti.html">București</a>
+        <a href="rutina.html">Rutină</a>
+    </nav>
+
+    <main class="container">
+        <article class="blog-article">
+            <span class="category">Organizare</span>
+            <h2>Cum să ai o rutină mai organizată: obiceiuri simple pentru studenți</h2>
+
+            <p class="meta">
+                <i class="fa-solid fa-calendar-days"></i> Publicat pe 15.05.2026 |
+                <i class="fa-solid fa-folder-open"></i> Organizare & viață de student |
+                <i class="fa-solid fa-clock"></i> Timp de citire: 4 min
+            </p>
+            <p class="author"><i class="fa-solid fa-user"></i> De: Andreea Mișcu</p>
+
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80"
+                alt="Birou de lucru ordonat cu laptop, o agendă deschisă și o cană cu băutură caldă">
+
+            <p>
+                Pentru mulți studenți, organizarea pare un obiectiv greu de atins deoarece nicio zi nu seamănă cu
+                cealaltă. Programul se împarte constant între cursuri matinale, seminare prelungite după-amiaza,
+                proiecte de echipă, sesiuni de studiu la bibliotecă și momentele dedicate vieții sociale. În lipsa unei
+                structuri, această agendă dinamică poate deveni rapid copleșitoare. Totuși, o rutină eficientă nu
+                presupune să ai fiecare minut planificat cu rigiditate, ci să îți stabilești câteva ancorări simple care
+                să îți ofere claritate și control.
+            </p>
+
+            <h3>1. Regula celor trei priorități zilnice</h3>
+            <p>
+                Primul pas către o zi mai organizată constă în prioritizarea corectă a sarcinilor. Nu ai nevoie de
+                aplicații software complicate sau sisteme greu de urmărit; o listă simplă pe hârtie sau în telefon este
+                suficientă. În fiecare dimineață sau în seara precedentă, alege doar trei obiective majore pe care vrei
+                și trebuie să le finalizezi. Concentrarea pe un număr mic de priorități te ajută să rămâi realist și
+                previne sentimentul de vinovăție de la finalul zilei.
+            </p>
+
+            <h3>2. Pregătirea conștientă de seara</h3>
+            <p>
+                Multe dintre diminețile noastre devin haotice nu pentru că avem prea multe activități în program, ci
+                pentru că pornim cu un start agitat. Un obicei incredibil de util este să îți pregătești lucrurile
+                esențiale cu o seară înainte: așază-ți în ghiozdan laptopul și încărcătoarele, lasă-ți la îndemână
+                documentele pentru cursuri și alege-ți hainele. Acest ritual scurt, de doar 10 minute, reduce
+                semnificativ stresul de dimineață și îți oferă un început de zi liniștit.
+            </p>
+
+            <h3>3. Segmentarea timpului de învățare și pauzele strategice</h3>
+            <p>
+                Să înveți ore în șir fără întrerupere este o strategie ineficientă care duce rapid la epuizare. O metodă
+                mult mai productivă este împărțirea sesiunilor de studiu în intervale concentrate, urmate de pauze
+                scurte. De exemplu, poți lucra focusat timp de 40 de minute, apoi să îți acorzi 10 minute de relaxare
+                completă. Pauzele nu reprezintă timp pierdut, ci momente necesare pentru ca creierul tău să asimileze
+                informația. Profită de ele ca să te ridici de la birou, să bei apă și să iei o gură de aer proaspăt.
+            </p>
+
+            <h3>4. Controlul conștient al notificărilor de pe telefon</h3>
+            <p>
+                Dispozitivele mobile sunt, fără îndoială, principalele surse de distragere a atenției. Fluxul continuu
+                de mesaje, notificări și rețele sociale ne fragmentează capacitatea de concentrare. Soluția nu este să
+                renunți definitiv la ele, ci să le utilizezi într-un mod controlat. Treci telefonul pe modul silențios
+                sau „Do Not Disturb” în timpul sesiunilor importante de studiu și stabilește ferestre orare specifice pe
+                parcursul zilei în care îți verifici fluxul de noutăți.
+            </p>
+
+            <h3>5. Odihna ca pilon principal al productivității</h3>
+            <p>
+                Există mitul conform căruia un student de succes trebuie să sacrifice somnul pentru a performa. În
+                realitate, privarea de odihnă scade dramatic atenția, memoria și creativitatea. O rutină cu adevărat
+                organizată plasează orele de somn în topul priorităților. Stabilește-ți un program de somn cât mai
+                stabil și asigură-te că ai momente fixe în zi dedicate meselor și deconectării totale. Echilibrul
+                biologic este cel care îți susține performanța academică pe termen lung.
+            </p>
+
+            <h3>Reflecția de la finalul zilei: ce păstrăm și ce schimbăm?</h3>
+            <p>
+                Înainte de culcare, acordă-ți un minut pentru o scurtă trecere în revistă a zilei: ce ai reușit să
+                bifezi, ce sarcini se amână pentru mâine și ce a funcționat mai puțin bine. Evită să te privești cu
+                severitate sau critică. Scopul acestui exercițiu este pur de conștientizare și optimizare. Unele zile
+                vor fi extrem de productive, în timp ce altele vor fi mai lente – ambele scenarii fac parte dintr-un
+                parcurs perfect normal.
+            </p>
+
+            <p>
+                În concluzie, o rutină stabilă și armonioasă se clădește pas cu pas, prin obiceiuri mărunte, dar
+                constante. Organizarea nu ar trebui să îți transforme viața de student într-un set rigid de reguli, ci,
+                din contră, să îți ofere libertatea și spațiul necesar pentru a te bucura din plin de anii de facultate.
+                Urban Mood susține ideea că un stil de viață ordonat este fundamentul unei minți liniștite și creative.
+            </p>
+
+            <a class="back-link" href="index.html#articole"><i class="fa-solid fa-arrow-left"></i> Înapoi la
+                articole</a>
+        </article>
+
+        <!-- Sectiune Comentarii -->
+        <section class="comments-section">
+            <h3><i class="fa-regular fa-comments"></i> Lasă un comentariu</h3>
+            <form class="comment-form" action="#" method="POST">
+                <input type="text" placeholder="Numele tău" required />
+                <input type="email" placeholder="Adresa de email (nu va fi publicată)" required />
+                <textarea rows="5"
+                    placeholder="Care este cel mai util obicei de organizare pentru tine? Împărtășește-ți experiența..."
+                    required></textarea>
+                <button type="submit" class="submit-btn">Adaugă Comentariul</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Formular Newsletter -->
+        <div class="newsletter">
+            <h4><i class="fa-regular fa-paper-plane"></i> Abonează-te la Newsletter</h4>
+            <p style="color: #ccc; font-size: 13px; margin-bottom: 12px;">Primești în fiecare vineri idei proaspete de
+                weekend în oraș.</p>
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" placeholder="Adresa ta de email" required />
+                <button type="submit">Mă abonez</button>
+            </form>
+        </div>
+
+        <!-- Social Media Linkuri -->
+        <div class="social-links">
+            <a href="https://instagram.com" target="_blank" title="Urmărește-ne pe Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" title="Urmărește-ne pe TikTok"><i
+                    class="fa-brands fa-tiktok"></i></a>
+            <a href="https://pinterest.com" target="_blank" title="Inspirație pe Pinterest"><i
+                    class="fa-brands fa-pinterest"></i></a>
+        </div>
+
+        <p><strong>Urban Mood</strong> - blog de lifestyle urban</p>
+        <p>Articol redactat de: Andreea Mișcu</p>
+        <p>&copy; 2026 Toate drepturile rezervate.</p>
+        <p>Contact: <a href="mailto:urbanmood@gmail.com"
+                style="color: #e0b084; text-decoration: none;">urbanmood@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>

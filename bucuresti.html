@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Mood - Locuri Cool în București</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Ghid urban pentru studenți: descoperă cele mai cool cafenele, librării și parcuri din București unde poți învăța sau ieși cu prietenii." />
+    <meta name="keywords"
+        content="locuri cool bucuresti, cafenele studenti, carturesti carusel, parcuri bucuresti, unde invatam in bucuresti" />
+    <meta name="author" content="Tănasie Alexia-Ștefania" />
+
+    <!-- FontAwesome pentru Iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f1ec;
+            color: #222;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+                url(https://images.unsplash.com/photo-1689655451590-be38de8003e2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 95px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 20px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e0b084;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-article {
+            background-color: #fff;
+            padding: 38px;
+            border-left: 7px solid #b36b3c;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        .blog-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 20px 0;
+        }
+
+        .blog-article h2 {
+            color: #3a2c25;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .blog-article .meta {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .blog-article .meta i {
+            margin-right: 5px;
+            color: #b36b3c;
+        }
+
+        .author {
+            color: #3a2c25;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .blog-article p {
+            margin-bottom: 17px;
+            font-size: 17px;
+        }
+
+        .blog-article h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #3a2c25;
+        }
+
+        .category {
+            color: #b36b3c;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        /* Sectiune Comentarii */
+        .comments-section {
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        .comments-section h3 {
+            margin-bottom: 20px;
+            color: #3a2c25;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            border-color: #b36b3c;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            background-color: #3a2c25;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #b36b3c;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3a2c25;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #b36b3c;
+            transform: translateX(-5px);
+        }
+
+        /* Buton Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #b36b3c;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background-color: #3a2c25;
+            transform: translateY(-5px);
+        }
+
+        /* Footer & Newsletter */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .newsletter {
+            max-width: 450px;
+            margin: 0 auto 25px auto;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #444;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .newsletter-form button {
+            background-color: #b36b3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e0b084;
+            color: #222;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 22px;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #e0b084;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            .blog-article img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header {
+                padding: 65px 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .blog-article {
+                padding: 25px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Buton Sus -->
+    <a href="#acasa" class="back-to-top" title="Înapoi sus">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <header id="acasa">
+        <h1>Urban Mood</h1>
+        <p>Blog de lifestyle urban despre timp liber, locuri din București, organizare, stil și viața de zi cu zi a
+            studenților.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Acasă</a>
+        <a href="index.html#articole">Articole</a>
+        <a href="weekend.html">Weekend</a>
+        <a href="bucuresti.html">București</a>
+        <a href="rutina.html">Rutină</a>
+    </nav>
+
+    <main class="container">
+        <article class="blog-article">
+            <span class="category">București</span>
+            <h2>Ghid pentru studenți: locuri cool din București unde poți ieși, învăța sau socializa</h2>
+
+            <p class="meta">
+                <i class="fa-solid fa-calendar-days"></i> Publicat pe 14.05.2026 |
+                <i class="fa-solid fa-folder-open"></i> Oraș & timp liber |
+                <i class="fa-solid fa-clock"></i> Timp de citire: 5 min
+            </p>
+            <p class="author"><i class="fa-solid fa-user"></i> De: Alexia-Ștefania Tănasie</p>
+
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+                alt="Cafenea cu atmosferă urbană cozy, perfectă pentru studiu și socializare în București">
+
+            <p>
+                Bucureștiul este un oraș care poate părea copleșitor la prima vedere. Traficul constant, aglomerația de
+                la metrou și ritmul rapid al vieții citadine pot lăsa impresia că spațiile de relaxare sunt greu de
+                găsit. Totuși, dacă alegi să explorezi Capitala dincolo de traseul clasic casă-facultate, vei descoperi
+                o rețea vibrantă de locuri create special pentru tineri: cafenele liniștite, oaze verzi ascunse,
+                librării-concept și spații culturale prietenoase cu bugetul de student.
+            </p>
+
+            <h3>1. Cafenelele de specialitate: biroul alternativ al studentului</h3>
+            <p>
+                Pentru studenți, un loc bun în oraș trebuie să fie accesibil, confortabil și să aibă o atmosferă caldă.
+                De aceea, cafenelele din București au devenit mult mai mult decât spații unde bei o băutură caldă; ele
+                funcționează ca adevărate hub-uri de lucru. Fie că ai de redactat un proiect de echipă, fie că vrei să
+                citești în liniște, o cafenea bună îți oferă lumină naturală excelentă, muzică ambientală în surdină și
+                conexiune stabilă la internet.
+            </p>
+
+            <h3>2. Parcurile urbane: reconectare și pauze binemeritate</h3>
+            <p>
+                Parcurile reprezintă o altă piesă esențială din puzzle-ul vieții de student în Capitală. Locuri precum
+                Herăstrău, Cișmigiu sau Tineretului oferă refugiul perfect atunci când ai nevoie de o pauză mentală.
+                Într-o perioadă dominată de ecrane și cursuri online, câteva ore petrecute în aer curat, o plimbare pe
+                aleile umbroase sau pur și simplu cititul unei cărți pe o bancă pot face minuni pentru starea ta de
+                spirit și nivelul de energie.
+            </p>
+
+            <h3>3. Librăriile și spațiile culturale: refugiul pasionaților de lectură</h3>
+            <p>
+                Dacă îți dorești o atmosferă profund liniștită și inspirațională, librăriile-concept sunt destinația
+                ideală. Un exemplu faimos este Cărturești Carusel din Centrul Vechi, o adevărată capodoperă
+                arhitecturală care combină rafturile pline de cărți cu o cafenea superbă la ultimul etaj. Astfel de
+                locuri nu sunt doar pentru cumpărături, ci și spații excelente pentru a răsfoi o revistă de artă, a găsi
+                o agendă faină sau a participa la evenimente culturale și expoziții care te scot din rutina zilnică.
+            </p>
+
+            <h3>4. Zonele urbane creative: inspirație pentru rețelele sociale</h3>
+            <p>
+                Pentru tinerii pasionați de fotografie, design sau crearea de conținut pe Instagram și TikTok,
+                Bucureștiul funcționează ca un decor urban fascinant. Străzile vechi din zona Cotroceni, clădirile cu
+                arhitectură interbelică de pe Calea Victoriei, pasajele luminate și pereții plini de street art colorat
+                reprezintă surse excelente de inspirație vizuală. Orașul încetează să mai fie doar un fundal aglomerat
+                și devine o pânză pe care îți poți exprima creativitatea.
+            </p>
+
+            <h3>Cum alegi locul potrivit în funcție de starea ta?</h3>
+            <p>
+                Secretul pentru a te bucura de București este să îți alegi destinația în funcție de scopul zilei. Când
+                ai nevoie de concentrare maximă pentru sesiune, îndreaptă-te spre o cafenea retrasă sau o sală de
+                lectură luminoasă. Când vrei să îți reîncarci bateriile socializând, alege o terasă plină de viață în
+                Centrul Vechi. Iar dacă vrei doar să creezi amintiri vizuale frumoase, ia-ți aparatul foto sau telefonul
+                și explorează străduțele ascunse.
+            </p>
+
+            <p>
+                În concluzie, Bucureștiul ascunde o mulțime de variante surprinzătoare pentru studenți, totul depinde de
+                curiozitatea cu care alegi să îl explorezi. Urban Mood te încurajează să privești dincolo de agitație și
+                să transformi fiecare ieșire simplă într-o oportunitate de relaxare, conectare și inspirație urbană.
+            </p>
+
+            <a class="back-link" href="index.html#articole"><i class="fa-solid fa-arrow-left"></i> Înapoi la
+                articole</a>
+        </article>
+
+        <!-- Sectiune Comentarii -->
+        <section class="comments-section">
+            <h3><i class="fa-regular fa-comments"></i> Lasă un comentariu</h3>
+            <form class="comment-form" action="#" method="POST">
+                <input type="text" placeholder="Numele tău" required />
+                <input type="email" placeholder="Adresa de email (nu va fi publicată)" required />
+                <textarea rows="5" placeholder="Care este locul tău preferat din București și de ce?..."
+                    required></textarea>
+                <button type="submit" class="submit-btn">Adaugă Comentariul</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Formular Newsletter -->
+        <div class="newsletter">
+            <h4><i class="fa-regular fa-paper-plane"></i> Abonează-te la Newsletter</h4>
+            <p style="color: #ccc; font-size: 13px; margin-bottom: 12px;">Primești în fiecare vineri idei proaspete de
+                weekend în oraș.</p>
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" placeholder="Adresa ta de email" required />
+                <button type="submit">Mă abonez</button>
+            </form>
+        </div>
+
+        <!-- Social Media Linkuri -->
+        <div class="social-links">
+            <a href="https://instagram.com" target="_blank" title="Urmărește-ne pe Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" title="Urmărește-ne pe TikTok"><i
+                    class="fa-brands fa-tiktok"></i></a>
+            <a href="https://pinterest.com" target="_blank" title="Inspirație pe Pinterest"><i
+                    class="fa-brands fa-pinterest"></i></a>
+        </div>
+
+        <p><strong>Urban Mood</strong> - blog de lifestyle urban</p>
+        <p>Articol redactat de: Alexia-Ștefania Tănasie</p>
+        <p>&copy; 2026 Toate drepturile rezervate.</p>
+        <p>Contact: <a href="mailto:urbanmood@gmail.com"
+                style="color: #e0b084; text-decoration: none;">urbanmood@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>
