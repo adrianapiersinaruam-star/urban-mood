@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Mood - Muzee din București pentru studenți</title>
+
+    <meta name="description"
+        content="Muzee din București pe care le poți vizita cu buget de student: Antipa, MNAC, MNAR și Muzeul Național de Istorie a României." />
+    <meta name="keywords"
+        content="muzee Bucuresti, studenti, Antipa, MNAC, MNAR, Muzeul National de Istorie, buget student" />
+    <meta name="author" content="Urban Mood" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7efe8;
+            color: #2b211c;
+            line-height: 1.7;
+        }
+
+         header {
+            background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+                url(https://images.unsplash.com/photo-1689655451590-be38de8003e2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 95px 20px;
+        }
+
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 20px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e0b084;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-article {
+            background-color: #fff;
+            padding: 38px;
+            border-left: 7px solid #b36b3c;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        .blog-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 20px 0;
+        }
+
+        .image-pair {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .image-pair img {
+            height: 320px;
+            margin: 0;
+        }
+
+        .blog-article h2 {
+            color: #3a2c25;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .blog-article .meta {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .blog-article .meta i {
+            margin-right: 5px;
+            color: #b36b3c;
+        }
+
+        .author {
+            color: #5f4639;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .blog-article p {
+            margin-bottom: 17px;
+            font-size: 17px;
+        }
+
+        .blog-article h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #3a2c25;
+        }
+
+        .price {
+            display: inline-block;
+            background-color: #f4e2d2;
+            color: #7b4528;
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .category {
+            color: #b36b3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #3a2c25;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .article-actions {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .back-link:hover {
+            background-color: #b36b3c;
+        }
+
+        .comments-section {
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        .comments-section h3 {
+            margin-bottom: 20px;
+            color: #3a2c25;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 13px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #b36b3c;
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            background-color: #3a2c25;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #b36b3c;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #b36b3c;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background-color: #3a2c25;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background-color: #2b211c;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #e0b084;
+            text-decoration: none;
+        }
+
+        .newsletter {
+            max-width: 450px;
+            margin: 0 auto 25px auto;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #444;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .newsletter-form button {
+            background-color: #b36b3c;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e0b084;
+            color: #222;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 22px;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #e0b084;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            .blog-article img {
+                height: 300px;
+            }
+
+            .image-pair {
+                grid-template-columns: 1fr;
+            }
+
+            .image-pair img {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header {
+                padding: 65px 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .blog-article {
+                padding: 25px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#acasa" class="back-to-top" title="Înapoi sus">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <header id="acasa">
+        <h1>Urban Mood</h1>
+        <p>Blog de lifestyle urban despre timp liber, locuri din București, organizare, stil și viața de zi cu zi a
+            studenților.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Acasă</a>
+        <a href="index.html#articole">Articole</a>
+        <a href="weekend.html">Weekend</a>
+        <a href="bucuresti.html">București</a>
+        <a href="muzeu.html">Muzee</a>
+        <a href="organizare.html">Organizare</a>
+        <a href="selfcare.html">Self-care</a>
+        <a href="masini.html">Evenimente</a>
+    </nav>
+
+    <main class="container">
+        <article class="blog-article">
+            <span class="category">Cultură & timp liber</span>
+            <h2>Muzee din București pe care le poți vizita cu buget de student</h2>
+
+            <p class="meta">
+                <i class="fa-solid fa-calendar-days"></i> Publicat pe 19.05.2026 |
+                <i class="fa-solid fa-folder-open"></i> București & cultură |
+                <i class="fa-solid fa-clock"></i> Timp de citire: 4 min
+            </p>
+            <p class="author"><i class="fa-solid fa-user"></i> De: Alexia-Ștefania Tănasie</p>
+
+            
+
+            <p>
+                Atunci când ne gândim la ieșiri prin București, de cele mai multe ori alegem o cafenea, o plimbare pe
+                Calea Victoriei sau o zi petrecută prin mall. Totuși, există și alte locuri interesante care merită
+                descoperite, mai ales atunci când vrei să faci ceva diferit fără să cheltuiești foarte mult.
+            </p>
+
+            <p>
+                Multe muzee din București oferă reduceri pentru studenți, iar unele dintre ele sunt surprinzător de
+                interesante, moderne și perfecte pentru o ieșire de weekend.
+            </p>
+
+            <h3>Muzeul Național de Istorie Naturală Grigore Antipa</h3>
+            <div class="image-pair">
+                <img src="imagini/antipa1.jpeg" alt="Expoziție din Muzeul Antipa">
+                <img src="imagini/antipa2.jpeg" alt="Detaliu din Muzeul Antipa">
+            </div>
+            <p>
+                Muzeul Antipa este unul dintre cele mai populare muzee din București și o alegere perfectă pentru o
+                ieșire relaxată de weekend. Expozițiile sunt interactive și foarte bine organizate, iar atmosfera face
+                vizita interesantă chiar și pentru cei care nu sunt pasionați de muzeele clasice.
+            </p>
+            <p>
+                Aici poți vedea animale exotice, schelete impresionante și multe expoziții despre natură și evoluție.
+                Este un loc potrivit atât pentru o vizită cu prietenii, cât și pentru câteva ore petrecute într-un mod
+                diferit și interesant.
+            </p>
+            <span class="price">Preț bilet student: aproximativ 7 lei</span>
+
+            <h3>Muzeul Național de Artă Contemporană</h3>
+            <div class="image-pair">
+                <img src="imagini/artacontemp1.jpeg" alt="Expoziție la Muzeul Național de Artă Contemporană">
+                <img src="imagini/artacontemp2.jpeg" alt="Interior din Muzeul Național de Artă Contemporană">
+            </div>
+            <p>
+                Muzeul Național de Artă Contemporană este locul perfect pentru cei care vor să descopere ceva diferit și
+                modern. Expozițiile sunt creative, iar atmosfera muzeului este complet diferită față de cea a muzeelor
+                clasice.
+            </p>
+            <p>
+                Unul dintre cele mai apreciate locuri este terasa muzeului, de unde poți vedea o panoramă foarte frumoasă
+                asupra orașului. Este un spațiu ideal pentru fotografii și pentru o ieșire mai relaxată în weekend.
+            </p>
+            <span class="price">Preț bilet student: 9 lei</span>
+
+            <h3>Muzeul Național de Artă al României</h3>
+            <div class="image-pair">
+                <img src="imagini/arta1.jpeg" alt="Expoziție la Muzeul Național de Artă al României">
+                <img src="imagini/arta2.jpeg" alt="Interior din Muzeul Național de Artă al României">
+            </div>
+            <p>
+                Situat pe Calea Victoriei, Muzeul Național de Artă al României este unul dintre cele mai elegante muzee
+                din București. Clădirea impresionantă și colecțiile de artă creează o atmosferă liniștită și relaxantă,
+                perfectă pentru un weekend mai calm.
+            </p>
+            <p>
+                Muzeul găzduiește picturi, sculpturi și expoziții variate, fiind un loc ideal pentru cei pasionați de
+                artă și cultură.
+            </p>
+            <span class="price">Preț bilet student: 6 lei</span>
+
+            <h3>Muzeul Național de Istorie a României</h3>
+            <div class="image-pair">
+                <img src="imagini/istorie.jpeg" alt="Muzeul Național de Istorie a României">
+                <img src="imagini/istorie2.jpeg" alt="Expoziție la Muzeul Național de Istorie a României">
+            </div>
+            <p>
+                Situat chiar pe Calea Victoriei, Muzeul Național de Istorie a României este unul dintre cele mai
+                interesante locuri din București pentru cei pasionați de istorie și cultură. Muzeul impresionează atât
+                prin clădirea elegantă, cât și prin colecțiile sale care prezintă diferite perioade importante din
+                istoria României.
+            </p>
+            <p>
+                Aici poți descoperi obiecte istorice, bijuterii, monede vechi și artefacte foarte bine păstrate. Una
+                dintre cele mai cunoscute atracții este copia Columnei lui Traian, dar și zona dedicată Tezaurului
+                Istoric al României, unde sunt expuse obiecte valoroase și spectaculoase.
+            </p>
+            <p>
+                Muzeul este o alegere foarte bună pentru o ieșire liniștită de weekend, mai ales datorită locației sale
+                centrale. După vizită, poți continua plimbarea pe Calea Victoriei sau prin Centrul Vechi.
+            </p>
+            <span class="price">Preț bilet student: 8 lei</span>
+
+            <div class="article-actions">
+                <a class="back-link" href="index.html#articole"><i class="fa-solid fa-arrow-left"></i> Înapoi la
+                    articole</a>
+            </div>
+        </article>
+
+        <section class="comments-section">
+            <h3><i class="fa-regular fa-comments"></i> Lasă un comentariu</h3>
+            <form class="comment-form" action="#" method="POST">
+                <input type="text" placeholder="Numele tău" required />
+                <input type="email" placeholder="Adresa de email (nu va fi publicată)" required />
+                <textarea rows="5" placeholder="Ce muzeu din București ai vrea să vizitezi și de ce?..."
+                    required></textarea>
+                <button type="submit" class="submit-btn">Adaugă Comentariul</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="newsletter">
+            <h4><i class="fa-regular fa-paper-plane"></i> Abonează-te la Newsletter</h4>
+            <p style="color: #ccc; font-size: 13px; margin-bottom: 12px;">Primești în fiecare vineri idei de locuri
+                culturale, muzee și ieșiri accesibile în București.</p>
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" placeholder="Adresa ta de email" required />
+                <button type="submit">Mă abonez</button>
+            </form>
+        </div>
+
+        <div class="social-links">
+            <a href="https://instagram.com" target="_blank" title="Urmărește-ne pe Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" title="Urmărește-ne pe TikTok"><i
+                    class="fa-brands fa-tiktok"></i></a>
+            <a href="https://pinterest.com" target="_blank" title="Inspirație pe Pinterest"><i
+                    class="fa-brands fa-pinterest"></i></a>
+        </div>
+
+        <p><strong>Urban Mood</strong> - blog de lifestyle urban</p>
+        <p>Articol redactat de: Alexia-Ștefania Tănasie</p>
+        <p>&copy; 2026 Toate drepturile rezervate.</p>
+        <p>Contact: <a href="mailto:urbanmood@gmail.com">urbanmood@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>
