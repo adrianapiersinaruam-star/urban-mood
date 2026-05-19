@@ -8,9 +8,9 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Urban Mood este un blog de lifestyle creat pentru tinerii din București. Descoperă idei de weekend, locuri cool din oraș și sfaturi de organizare." />
+        content="Urban Mood este un blog de lifestyle creat pentru tinerii din București. Descoperă idei de weekend, locuri cool din oraș, sfaturi de organizare și idei de self-care." />
     <meta name="keywords"
-        content="lifestyle urban, bucuresti, studenti, organizare rutina, timp liber, cafenele cozy" />
+        content="lifestyle urban, bucuresti, studenti, organizare rutina, timp liber, cafenele cozy, self-care" />
     <meta name="author" content="Adriana-Mihaela Pierșinaru, Alexia-Ștefania Tănasie, Andreea Mișcu" />
 
     <!-- FontAwesome pentru Iconițe -->
@@ -22,12 +22,11 @@
             margin: 0;
             padding: 0;
             transition: all 0.3s ease;
-            /* Tranziții fine pentru elementele interactive */
         }
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f1ec;
+            background: linear-gradient(135deg, #f5f1ec, #ffe0c7, #e3ecff, #fff4d6);
             color: #222;
             line-height: 1.7;
             scroll-behavior: smooth;
@@ -67,12 +66,29 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            display: inline-block;
+            margin: 0 6px;
+            padding: 10px 14px;
+            border-radius: 8px;
             font-weight: bold;
+            transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
         }
 
-        nav a:hover {
+        nav a:hover,
+        nav a:focus {
+            background-color: rgba(224, 176, 132, 0.16);
             color: #e0b084;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        nav a:active {
+            transform: translateY(0);
+        }
+
+        nav a.active {
+            background-color: #b36b3c;
+            color: white;
         }
 
         .container {
@@ -84,10 +100,11 @@
         .intro {
             text-align: center;
             margin-bottom: 45px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 35px;
             border-radius: 18px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(6px);
         }
 
         .intro h2 {
@@ -105,26 +122,26 @@
         /* Gridul de Articole */
         .articles-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin-bottom: 50px;
             scroll-margin-top: 80px;
-            /* Previne suprapunerea cu meniul sticky când dai click pe link */
         }
 
         .card {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.92);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            backdrop-filter: blur(6px);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
         }
 
         .card img {
@@ -316,11 +333,13 @@
     </header>
 
     <nav>
-        <a href="index.html#acasa">Acasă</a>
+        <a href="index.html#acasa" class="active">Acasă</a>
         <a href="index.html#articole">Articole</a>
         <a href="weekend.html">Weekend</a>
         <a href="bucuresti.html">București</a>
-        <a href="rutina.html">Rutină</a>
+        <a href="rutina.html">Organizare</a>
+        <a href="selfcare.html">Self-care</a>
+        <a href="masini.html">Evenimente</a>
     </nav>
 
     <main class="container">
@@ -335,8 +354,9 @@
             </p>
         </section>
 
-        <!-- Gridul de Articole (Sectiunea Principala) -->
+        <!-- Gridul de Articole -->
         <section id="articole" class="articles-grid">
+
             <!-- Card 1: Weekend -->
             <article class="card">
                 <img src="https://images.unsplash.com/photo-1602273209102-fbe4b4952f46?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -353,7 +373,7 @@
                 </div>
             </article>
 
-            <!-- Card 2: Bucuresti -->
+            <!-- Card 2: București -->
             <article class="card">
                 <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
                     alt="Interiorul unei cafenele moderne din București plină de lumină">
@@ -371,19 +391,52 @@
 
             <!-- Card 3: Organizare -->
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80"
+                <img src="./imagini/pozarutina.jpeg"
                     alt="Birou de student organizat estetic cu agendă, laptop și o cană de cafea">
                 <div class="card-content">
                     <div>
                         <span class="category"><i class="fa-solid fa-list-check"></i> Organizare</span>
                         <h3>O rutină mai organizată</h3>
-                        <p>Mici obiceiuri zilnice și pași practici prin care poți trece cu succes prin sesiune și
-                            cursuri, păstrându-ți în același timp energia și zâmbetul.</p>
+                        <p>Un ghid practic pentru perioadele aglomerate de la facultate: cum îți organizezi timpul,
+                            spațiul de învățat și ritmul zilnic în sesiune.</p>
                     </div>
                     <a class="read-more" href="rutina.html">Citește articolul <i
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
+
+            <!-- Card 4: Self-care -->
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80"
+                    alt="Moment de relaxare cu ceai, agendă și atmosferă cozy">
+                <div class="card-content">
+                    <div>
+                        <span class="category"><i class="fa-solid fa-heart"></i> Lifestyle</span>
+                        <h3>Self-care în ritmul orașului</h3>
+                        <p>Idei simple de grijă de sine pentru zilele în care orașul te obosește: pauze reale, limite
+                            sănătoase și momente mici de relaxare.</p>
+                    </div>
+                    <a class="read-more" href="selfcare.html">Citește articolul <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Card 5: Evenimente Auto -->
+            <article class="card">
+                <img src="./imagini/masinimulte.jpeg"
+                    alt="Mașini expuse la un eveniment auto organizat la Palatul Mogoșoaia">
+                <div class="card-content">
+                    <div>
+                        <span class="category"><i class="fa-solid fa-car"></i> Evenimente</span>
+                        <h3>Expoziție auto la Mogoșoaia</h3>
+                        <p>O escapadă de weekend la Palatul Mogoșoaia, printre modele exclusiviste, atmosferă de
+                            festival și mașini care atrag toate privirile.</p>
+                    </div>
+                    <a class="read-more" href="masini.html">Citește articolul <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
         </section>
     </main>
 
