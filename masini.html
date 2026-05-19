@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Mood - O duminică altfel la Mogoșoaia</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="O duminică altfel la Mogoșoaia: mașini tari, mâncare bună, relaxare pe malul lacului și vibe de festival la DSTRCT VIII." />
+    <meta name="keywords"
+        content="Mogosoaia, masini, DSTRCT VIII, Subaru BRZ, Porsche 911, lifestyle urban, studenti, weekend Bucuresti" />
+    <meta name="author" content="Adriana-Mihaela Pierșinaru" />
+
+    <!-- FontAwesome pentru Iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #f5f1ec, #ffe0c7, #d6e4ff, #f7d6ff);
+            color: #222;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+                url(https://images.unsplash.com/photo-1689655451590-be38de8003e2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 95px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 20px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e0b084;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-article {
+            background-color: #fff;
+            padding: 38px;
+            border-left: 7px solid #b36b3c;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            margin-bottom: 35px;
+        }
+
+        .blog-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 20px 0;
+        }
+
+        .blog-article h2 {
+            color: #3a2c25;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .blog-article .meta {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .blog-article .meta i {
+            margin-right: 5px;
+            color: #b36b3c;
+        }
+
+        .author {
+            color: #3a2c25;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .blog-article p {
+            margin-bottom: 17px;
+            font-size: 17px;
+        }
+
+        .blog-article h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #3a2c25;
+        }
+
+        .category {
+            color: #b36b3c;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .comments-section {
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            margin-bottom: 35px;
+        }
+
+        .comments-section h3 {
+            margin-bottom: 20px;
+            color: #3a2c25;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            border-color: #b36b3c;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            background-color: #3a2c25;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #b36b3c;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3a2c25;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #b36b3c;
+            transform: translateX(-5px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #b36b3c;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background-color: #3a2c25;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .newsletter {
+            max-width: 450px;
+            margin: 0 auto 25px auto;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #444;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .newsletter-form button {
+            background-color: #b36b3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e0b084;
+            color: #222;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 22px;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #e0b084;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        @media (max-width: 900px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            .blog-article img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header {
+                padding: 65px 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .blog-article {
+                padding: 25px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        .poza-articol {
+            width: min(100%, 800px);
+            max-width: 800px;
+            display: block;
+            margin: 25px auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Buton Sus -->
+    <a href="#acasa" class="back-to-top" title="Înapoi sus">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <header id="acasa">
+        <h1>Urban Mood</h1>
+        <p>Blog de lifestyle urban despre timp liber, locuri din București, organizare, stil și viața de zi cu zi a
+            studenților.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Acasă</a>
+        <a href="index.html#articole">Articole</a>
+        <a href="weekend.html">Weekend</a>
+        <a href="bucuresti.html">București</a>
+        <a href="rutina.html">Organizare</a>
+        <a href="selfcare.html">Self-care</a>
+        <a href="masini.html">Evenimente</a>
+    </nav>
+
+    <main class="container">
+        <article class="blog-article">
+            <span class="category">Weekend / Mașini</span>
+            <h2>O duminică altfel la Mogoșoaia</h2>
+
+            <p class="meta">
+                <i class="fa-solid fa-calendar-days"></i> Publicat pe 19.05.2026 |
+                <i class="fa-solid fa-folder-open"></i> Lifestyle urban |
+                <i class="fa-solid fa-clock"></i> Timp de citire: 5 min
+            </p>
+
+            <p class="author"><i class="fa-solid fa-user"></i> De: Andreea Mișcu</p>
+
+            <img src="imagini/intrare2.jpeg" alt="Mașină expusă la evenimentul auto de la Mogoșoaia">
+
+            <h3>Mașini tari, mâncare bună și relaxare pe malul lacului</h3>
+
+            <p>
+                Ca student în București, e foarte ușor să intri într-o rutină plictisitoare. Te împarți mereu între
+                facultate, sesiune, aceleași cafenele din centru și seri lungi în cămin când povestești cu colegii
+                despre examene. În weekendul acesta am simțit că am nevoie urgentă de o pauză și de puțin aer curat,
+                așa că am decis să las în spate cursurile și să ies din oraș. Am fugit până la Palatul Mogoșoaia, iar
+                motivul a fost o super expoziție auto organizată chiar acolo, în parc.
+            </p>
+            <img src="imagini/masinimulte.jpeg" alt="Expoziție auto la Palatul Mogoșoaia" class="poza-articol">
+
+            <h3>Modele exclusiviste și mașina visurilor mele la DSTRCT VIII</h3>
+
+            <p>
+                A fost vorba despre cel de-al optulea eveniment din seria celor de la DSTRCT, iar atmosfera m-a surprins
+                total de cum am ajuns. Parcul era plin de energie și avea un vibe exact ca de festival. Peste tot pe
+                alei și pe iarbă erau aliniate mașini extrem de diverse, pentru toate gusturile. Au fost prezente
+                branduri mari precum BMW, Audi, Porsche, Volkswagen, Honda, Ferrari, Volvo, Subaru și Toyota.
+            </p>
+        
+            
+
+            <p>
+                Fiecare mașină avea ceva special, aleasă parcă pe sprânceană, dar eu m-am oprit instant când am văzut-o
+                pe cea a visurilor mele: un Subaru BRZ care aparținea chiar unei fete. Avea o culoare incredibilă, un
+                alb perlat roz care pur și simplu îți lua ochii. Deși nu era modificată exact pe stilul meu, era atât de
+                frumoasă încât aș fi dat orice să fie a mea.
+            </p>
+            <img src="imagini/masina1.jpeg" alt="Mașină expusă la DSTRCT VIII" class="poza-articol">
+
+            <p>
+                Piesa de rezistență a acestei ediții a fost cu siguranță un model Porsche 911 spectaculos. Această
+                mașină are o poveste aparte, fiind asamblată de către celebrul Akira Nakai chiar în timpul vizitei sale
+                în România, la Custom Tuning Garage. Deși el nu a fost prezent la eveniment, românul care l-a ajutat
+                direct să o asambleze a fost acolo.
+            </p>
+            <img src="imagini/masina3.jpeg" alt="Mașină expusă la DSTRCT VIII" class="poza-articol">
+
+            <p>
+                Este vorba despre Laurențiu Oprea, sau Sese, cum îi spun prietenii. El și restul numelor cunoscute în
+                lumea tuningului au fost extrem de deschiși și de prietenoși, stând de vorbă cu absolut orice doritor
+                sau fan care voia să afle mai multe detalii despre mașinile modificate.
+            </p>
+
+            <h3>Street food, chill pe malul lacului și un bilet la preț de pont</h3>
+
+            <p>
+                Pe lângă toate aceste bijuterii pe patru roți, vremea de afară a ținut cu noi și a completat perfect
+                vibe-ul mișto. Prețul pentru bilet a fost chiar un pont bun, eu reușind să îl prind la doar 65 de lei
+                pentru ambele zile ale evenimentului, ceea ce pentru bugetul nostru e mai mult decât decent având în
+                vedere tot ce puteai să vezi acolo.
+            </p>
+
+            <p>
+                După ce am admirat mașinile și am stat de vorbă cu oamenii din comunitate, m-am oprit în zona cu food
+                truck-uri și mi-am luat ceva bun de mâncare. Să stai pe iarbă, direct pe malul lacului, să mănânci un
+                burger cald și să prinzi puțin soare alături de prieteni este definiția perfectă a relaxării după o
+                săptămână plină de proiecte obositoare.
+            </p>
+
+            <p>
+                Toată lumea din jur era relaxată și se bucura de zi fără să se grăbească nicăieri.
+            </p>
+
+            <h3>Cum ajungi rapid și ieftin din Gara de Nord</h3>
+
+            <p>
+                Partea mai bună pentru noi, ca studenți, este că o astfel de ieșire este foarte accesibilă și deloc
+                complicată. Nu ai nevoie de mașină personală și nu trebuie să dai o avere pe Uber. Poți lua trenul
+                direct din Gara de Nord și în aproximativ un sfert de oră ai ajuns la stația Mogoșoaia, iar biletul de
+                tren este chiar ieftin.
+            </p>
+
+            <p>
+                De la stație mai faci o scurtă plimbare pe jos și ești direct în parc. Este varianta ideală când vrei să
+                îți limpezești mintea și să te întorci la cursuri cu bateriile complet încărcate.
+            </p>
+
+            <p>
+                O astfel de zi îți demonstrează că nu trebuie să pleci neapărat la mare sau la munte ca să simți că ai
+                avut un weekend reușit. Mixul dintre mașini cu povești unice, mâncare bună, muzică și peisajul de pe
+                malul lacului a transformat o duminică obișnuită într-o super experiență. Ne-am întors în București
+                puțin obosiți de la mersul pe jos, dar cu o stare mult mai bună și cu telefoanele pline de poze faine.
+            </p>
+
+            <p>
+                Voi cum ați ales să vă petreceți weekendul acesta și ce alte locuri faine de lângă București ați mai
+                descoperit în ultima vreme? Lăsați-mi părerile voastre mai jos în secțiunea de comentarii, iar dacă v-a
+                plăcut articolul, nu uitați să îl trimiteți și colegilor voștri care au nevoie de o idee bună de ieșire
+                pentru weekendul viitor!
+            </p>
+
+            <a class="back-link" href="index.html#articole">
+                <i class="fa-solid fa-arrow-left"></i> Înapoi la articole
+            </a>
+        </article>
+
+        <!-- Sectiune Comentarii -->
+        <section class="comments-section">
+            <h3><i class="fa-regular fa-comments"></i> Lasă un comentariu</h3>
+            <form class="comment-form" action="#" method="POST">
+                <input type="text" placeholder="Numele tău" required />
+                <input type="email" placeholder="Adresa de email (nu va fi publicată)" required />
+                <textarea rows="5" placeholder="Scrie părerea sau recomandarea ta aici..." required></textarea>
+                <button type="submit" class="submit-btn">Adaugă Comentariul</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Formular Newsletter -->
+        <div class="newsletter">
+            <h4><i class="fa-regular fa-paper-plane"></i> Abonează-te la Newsletter</h4>
+            <p style="color: #ccc; font-size: 13px; margin-bottom: 12px;">
+                Primești în fiecare vineri idei proaspete de weekend, locuri faine și recomandări urbane.
+            </p>
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" placeholder="Adresa ta de email" required />
+                <button type="submit">Mă abonez</button>
+            </form>
+        </div>
+
+        <!-- Social Media Linkuri -->
+        <div class="social-links">
+            <a href="https://instagram.com" target="_blank" title="Urmărește-ne pe Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com" target="_blank" title="Urmărește-ne pe TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://pinterest.com" target="_blank" title="Inspirație pe Pinterest">
+                <i class="fa-brands fa-pinterest"></i>
+            </a>
+        </div>
+
+        <p><strong>Urban Mood</strong> - blog de lifestyle urban</p>
+        <p>Articol redactat de: Andreea Mișcu</p>
+        <p>&copy; 2026 Toate drepturile rezervate.</p>
+        <p>Contact: <a href="mailto:urbanmood@gmail.com"
+                style="color: #e0b084; text-decoration: none;">urbanmood@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>

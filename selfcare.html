@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Mood - Self-care în Ritmul Orașului</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Descoperă idei simple de self-care pentru studenți, obiceiuri de relaxare și echilibru în ritmul agitat al orașului." />
+    <meta name="keywords"
+        content="self-care, lifestyle urban, studenti Bucuresti, relaxare, echilibru, rutina, timp pentru tine" />
+    <meta name="author" content="Adriana-Mihaela Pierșinaru" />
+
+    <!-- FontAwesome pentru Iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #f5f1ec, #ffe0c7, #d6e4ff, #f7d6ff);
+            color: #222;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+                url(https://images.unsplash.com/photo-1689655451590-be38de8003e2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 95px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 20px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e0b084;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-article {
+            background-color: #fff;
+            padding: 38px;
+            border-left: 7px solid #b36b3c;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            margin-bottom: 35px;
+        }
+
+        .blog-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 20px 0;
+        }
+
+        .blog-article h2 {
+            color: #3a2c25;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .blog-article .meta {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .blog-article .meta i {
+            margin-right: 5px;
+            color: #b36b3c;
+        }
+
+        .author {
+            color: #3a2c25;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .blog-article p {
+            margin-bottom: 17px;
+            font-size: 17px;
+        }
+
+        .blog-article h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #3a2c25;
+        }
+
+        .category {
+            color: #b36b3c;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        .comments-section {
+            background-color: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            margin-bottom: 35px;
+        }
+
+        .comments-section h3 {
+            margin-bottom: 20px;
+            color: #3a2c25;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            border-color: #b36b3c;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            background-color: #3a2c25;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #b36b3c;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3a2c25;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #b36b3c;
+            transform: translateX(-5px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #b36b3c;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background-color: #3a2c25;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .newsletter {
+            max-width: 450px;
+            margin: 0 auto 25px auto;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #444;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .newsletter-form button {
+            background-color: #b36b3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e0b084;
+            color: #222;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 22px;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #e0b084;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        @media (max-width: 900px) {
+            header h1 {
+                font-size: 38px;
+            }
+
+            .blog-article img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header {
+                padding: 65px 15px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .blog-article {
+                padding: 25px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Buton Sus -->
+    <a href="#acasa" class="back-to-top" title="Înapoi sus">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <header id="acasa">
+        <h1>Urban Mood</h1>
+        <p>Blog de lifestyle urban despre timp liber, locuri din București, organizare, stil și viața de zi cu zi a
+            studenților.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Acasă</a>
+        <a href="index.html#articole">Articole</a>
+        <a href="weekend.html">Weekend</a>
+        <a href="bucuresti.html">București</a>
+        <a href="rutina.html">Organizare</a>
+        <a href="selfcare.html">Self-care</a>
+        <a href="masini.html">Evenimente</a>
+    </nav>
+
+    <main class="container">
+        <article class="blog-article">
+            <span class="category">Self-care</span>
+            <h2>Self-care în ritmul orașului: cum să ai grijă de tine într-o viață agitată</h2>
+
+            <p class="meta">
+                <i class="fa-solid fa-calendar-days"></i> Publicat pe 18.05.2026 |
+                <i class="fa-solid fa-folder-open"></i> Lifestyle urban |
+                <i class="fa-solid fa-clock"></i> Timp de citire: 5 min
+            </p>
+
+            <p class="author"><i class="fa-solid fa-user"></i> De: Adriana-Mihaela Pierșinaru</p>
+
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=80"
+                alt="Moment de relaxare cu agendă, ceai și atmosferă cozy">
+
+            <p>
+                Să fii student în București este o experiență genială, dar hai să fim sincere: uneori te consumă
+                complet. Printre cursuri care par că nu se mai termină,
+                drumuri interminabile cu metroul la ore de vârf și dorința de a avea și o viață socială activă, uiți
+                complet să mai vezi ce faci TU. Ajungi acasă seara, dai scroll la infinit pe TikTok și crezi că te
+                relaxezi, când de fapt doar îți amâni oboseala. De aceea, ideea de self-care nu e un moft de pe
+                Instagram și nici o mască de față de 5 lei. Este pur și simplu plasa ta de siguranță ca să nu ajungi la
+                burnout.
+            </p>
+
+            <p>
+                Când spui „grijă de sine”, majoritatea oamenilor se gândesc la vacanțe scumpe, zile petrecute la spa sau
+                cumpărături impulsive. În realitate, când ești la facultate și ai un buget limitat, self-care înseamnă
+                lucruri mult mai simple, dar cu impact uriaș. Înseamnă să înveți să spui „nu” când ești epuizată, să pui
+                telefonul pe silențios fără teama că pierzi ceva important și să îți dai voie să nu faci absolut nimic
+                timp de o oră fără să te simți vinovată.
+            </p>
+
+            <h3>1. Dimineți fără scroll și grabă toxică</h3>
+            <p>
+                Cum arată prima ta jumătate de oră după ce te trezești? Dacă primul impuls este să deschizi Instagramul
+                sau să verifici grupul de WhatsApp al facultății, pornești ziua gata stresată. O schimbare mică, dar
+                care îți va schimba complet vibe-ul, este să lași telefonul deoparte măcar primele 15 minute. Bea-ți
+                cafeaua sau ceaiul uitându-te pe fereastră, ascultă piesa ta preferată sau notează-ți rapid în agendă
+                cum vrei să arate ziua de azi. Un început calm îți dă o energie bună care te va însoți până seara.
+            </p>
+            <img src="https://plus.unsplash.com/premium_photo-1723485688045-b076aa969c9a?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="O cană de cafea caldă dimineața pe o masă luminoasă lângă o fereastră"
+                style="width: 100%; height: 300px; object-fit: cover; border-radius: 14px; margin: 20px 0;">
+
+            <h3>2. Pauze reale (fără ecrane incluse)</h3>
+            <p>
+                Când simți că îți amorțesc picioarele pe scaun după trei ore de învățat sau scris la proiectul de
+                licență, o pauză pe telefon nu te va ajuta deloc. Ochii și creierul tău rămân la fel de obosiți. O pauză
+                adevărată înseamnă mișcare fizică și deconectare. Ridică-te de la birou, deschide larg fereastra ca să
+                aerisești camera, fă câteva exerciții ușoare de stretching sau mergi până la bucătărie să îți prepari o
+                gustare bună. Cinci minute în care privești cerul, nu ecranul, îți vor reseta complet capacitatea de
+                concentrare.
+            </p>
+
+            <h3>3. Creează-ți micile tale oaze urbane</h3>
+            <p>
+                Într-un oraș zgomotos și plin de claxoane, ai nevoie de locuri de refugiu care să îți dea o stare de
+                siguranță și confort. Poate fi un colț ascuns dintr-un parc mai puțin aglomerat, o cafenea mică de
+                specialitate unde barista îți știe deja numele, sau chiar propriul tău dormitor. Transformă-ți spațiul
+                personal într-un sanctuar: adaugă niște lumini calde, aprinde o lumânare parfumată cu aromă de vanilie
+                sau lavandă și păstrează curățenia pe birou. Locul în care trăiești îți reflectă și îți influențează
+                direct liniștea interioară.
+            </p>
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
+                alt="Dormitor cozy decorat cu lumini calde și plante verzi, un spațiu perfect de relaxare"
+                style="width: 100%; height: 300px; object-fit: cover; border-radius: 14px; margin: 20px 0;">
+
+            <h3>4. Întoarcerea la pasiunile care nu au legătură cu facultatea</h3>
+            <p>
+                Când ai intrat ultima dată într-o librărie doar ca să răsfoiești cărți fără să cauți bibliografie pentru
+                vreun seminar? Când ai desenat, ai gătit o rețetă nouă sau ai făcut o plimbare lungă doar pentru că ai
+                avut chef, fără vreo țintă anume? Self-care înseamnă și să îți hrănești hobby-urile, acele activități
+                care nu îți aduc note, bani sau validare online, ci pur și simplu bucurie pură. Redescoperă ce îți
+                plăcea să faci înainte ca programul tău să fie dictat de termene-limită.
+            </p>
+
+            <h3>5. Detox-ul digital de seară</h3>
+            <p>
+                Lumina albastră a ecranelor este cel mai mare inamic al unui somn profund. Dacă adormi cu telefonul în
+                mână, te vei trezi obosită, chiar dacă ai dormit 8 ore. Încearcă o provocare simplă: cu 30 de minute
+                înainte de culcare, pune telefonul la încărcat departe de pat. Înlocuiește ecranele cu câteva pagini
+                dintr-o carte beletristică, ascultă un podcast relaxant sau pur și simplu pune-ți muzica preferată în
+                căști. Corpul tău va înțelege
+                că e timpul să se relaxeze, iar a doua zi te vei trezi cu o minte mult mai limpede.
+            </p>
+            <img src="https://images.unsplash.com/photo-1499810631641-541e76d678a2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="O persoană relaxându-se în pat în timp ce ascultă muzică pe timp de seară"
+                style="width: 100%; height: 300px; object-fit: cover; border-radius: 14px; margin: 20px 0;">
+
+            <p>Pe scurt, un ghid rapid de supraviețuire urbană prin self-care:</p>
+
+            <ul>
+                <li>🌿 <strong>O plimbare scurtă pe jos</strong> în drum spre casă, doar ca să îți limpezești gândurile;
+                </li>
+                <li>☕ <strong>O cafea băută pe îndelete</strong>, fără să verifici mailurile în același timp;</li>
+                <li>📵 <strong>Măcar 30 de minute de liniște deplină</strong> pe zi, cu notificările oprite;</li>
+                <li>📝 <strong>Să îți scrii gândurile într-un jurnal</strong> atunci când simți că ai mintea prea plină;
+                </li>
+                <li>😴 <strong>Un program de somn non-negociabil</strong>, mai ales în perioadele aglomerate;</li>
+                <li>🤍 <strong>Curajul de a refuza o ieșire</strong> în oraș atunci când corpul tău îți cere doar
+                    odihnă.</li>
+            </ul>
+
+            <p>
+                Concluzia e simplă: grija de sine nu trebuie să devină ceva complicat și în niciun caz nu vine la pachet
+                cu un manual de instrucțiuni. Pentru noi, fetele care încercăm să ne găsim drumul prin agitația
+                Bucureștiului,
+                self-care-ul începe cu pași mărunți și blândețe față de noi înșine. Mai multă odihnă, mai puțină
+                presiune autoimpusă și mai multe momente în care pur și simplu ne bucurăm de prezent. Urban Mood îți
+                reamintește că orașul poate fi incredibil de frumos, dar doar atunci când ești destul de odihnită ca să
+                îl observi.
+            </p>
+
+            <a class="back-link" href="index.html#articole">
+                <i class="fa-solid fa-arrow-left"></i> Înapoi la articole
+            </a>
+        </article>
+
+        <!-- Sectiune Comentarii -->
+        <section class="comments-section">
+            <h3><i class="fa-regular fa-comments"></i> Lasă un comentariu</h3>
+            <form class="comment-form" action="#" method="POST">
+                <input type="text" placeholder="Numele tău" required />
+                <input type="email" placeholder="Adresa de email (nu va fi publicată)" required />
+                <textarea rows="5" placeholder="Tu ce faci ca să îți reîncarci bateriile după o zi grea de cursuri?..."
+                    required></textarea>
+                <button type="submit" class="submit-btn">Adaugă Comentariul</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Formular Newsletter -->
+        <div class="newsletter">
+            <h4><i class="fa-regular fa-paper-plane"></i> Abonează-te la Newsletter</h4>
+            <p style="color: #ccc; font-size: 13px; margin-bottom: 12px;">Primești în fiecare vineri idei proaspete
+                pentru un stil de viață urban mai echilibrat.</p>
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" placeholder="Adresa ta de email" required />
+                <button type="submit">Mă abonez</button>
+            </form>
+        </div>
+
+        <!-- Social Media Linkuri -->
+        <div class="social-links">
+            <a href="https://instagram.com" target="_blank" title="Urmărește-ne pe Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com" target="_blank" title="Urmărește-ne pe TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://pinterest.com" target="_blank" title="Inspirație pe Pinterest">
+                <i class="fa-brands fa-pinterest"></i>
+            </a>
+        </div>
+
+        <p><strong>Urban Mood</strong> - blog de lifestyle urban</p>
+        <p>Articol redactat de: Adriana-Mihaela Pierșinaru</p>
+        <p>&copy; 2026 Toate drepturile rezervate.</p>
+        <p>Contact: <a href="mailto:urbanmood@gmail.com"
+                style="color: #e0b084; text-decoration: none;">urbanmood@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>
